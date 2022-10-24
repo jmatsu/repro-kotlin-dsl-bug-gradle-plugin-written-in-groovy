@@ -13,21 +13,10 @@ jobs:
         gradle-version:
           - 6.7.1
           - 6.8
-        agp-version:
-          - 4.1.2
-          - 4.2.0
         include:
           - gradle-version: 6.7.1
-            agp-version: 4.1.2
             expect: fail
           - gradle-version: 6.8
-            agp-version: 4.1.2
-            expect: success
-          - gradle-version: 6.7.1
-            agp-version: 4.2.0
-            expect: fail
-          - gradle-version: 6.8
-            agp-version: 4.2.0
             expect: success
     steps:
       - uses: actions/checkout@v3
@@ -40,5 +29,3 @@ jobs:
           gradle-version: ${{ matrix.gradle-version }}
       - run: gradle build
         name: "this step should ${{ matrix.expect }}"
-        env:
-          AGP_VERSION: ${{ matrix.agp-version }}
