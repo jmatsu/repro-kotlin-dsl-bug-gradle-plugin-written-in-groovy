@@ -51,10 +51,11 @@ This behaviour depends on Gradle -- Groovy transitively.
 | Groovy | 5.6-5.7.1 | Fail |
 | Groovy | 5.8- | Success |
 
-We cannot avoid this behaviour even though we specify the distribution Groovy version.
+We cannot avoid this behaviour even if we specify the distribution Groovy version.
 
 # Conclusion
 
-- Gradle version at runtime cause this issue.
+- Gradle version at runtime would cause this issue.
 - Gradle plugins written in Groovy may not be reliable in some cases.
 - A workaround is to use Java code for classes that provide Action interface.
+
