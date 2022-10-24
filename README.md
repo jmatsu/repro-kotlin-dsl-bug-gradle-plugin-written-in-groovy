@@ -1,4 +1,4 @@
-As for Kotlin DSL, A build function that take an Action interface may fail in some cases if it's originally written in Groovy.
+As for Kotlin DSL, A build function that take an Action interface may fail depending on Gradle versions if it's originally written in Groovy.
 
 ```gradle
 groovySample { // Not a lambda of Action
@@ -43,29 +43,18 @@ Build_gradle$2$1$3
 > Build_gradle$2$1$3
 ```
 
-This behaviour depends on Gradle.
+This behaviour depends on Gradle -- Groovy transitively.
 
 | Language | Gradle Version | Result |
 |:---|:---|:---|:---|
 | Java | 5.6-5.8 | Success |
-| Java | 5.7.1- | Success |
 | Groovy | 5.6-5.7.1 | Fail |
 | Groovy | 5.8- | Success |
-| Groovy | 5.7.1- | Success |
 
-And also, this behaviour seems to be affected by a runtime configuration.
+We cannot avoid this behaviour even though we specify the distribution Groovy version.
 
-| Language | Android Gradle Plugin | Result |
-|:---|:---|:---|:---|
-| Groovy | 4.1.x | 5.7.1 | Fail |
-| Groovy | 4.2.x | 5.7.1- | Success |
+# Conclusion
 
-# Table
-
-| Language | Android Gradle Plugin | Gradle Version | Result |
-|:---|:---|:---|:---|
-| Java | 4.1.x | 5.6-5.8 | Success |
-| Java | 4.2.x | 5.7.1- | Success |
-| Groovy | 4.1.x | 5.6-5.7.1 | Fail |
-| Groovy | 4.1.x | 5.8- | Success |
-| Groovy | 4.2.x | 5.7.1- | Success |
+- Gradle version at runtime cause this issue.
+- Gradle plugins written in Groovy may not be reliable in some cases.
+- A workaround is to use Java code for classes that provide Action interface.
