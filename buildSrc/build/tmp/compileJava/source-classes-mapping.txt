@@ -1,0 +1,6 @@
+com/example/jmatsu/JavaDefinitionExtension.java
+ com.example.jmatsu.JavaDefinitionExtension
+com/example/jmatsu/JavaDefinition.java
+ com.example.jmatsu.JavaDefinition
+com/example/jmatsu/JavaSamplePlugin.java
+ com.example.jmatsu.JavaSamplePlugin

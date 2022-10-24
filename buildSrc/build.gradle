@@ -1,0 +1,23 @@
+plugins {
+    id 'groovy'
+    id 'java-gradle-plugin'
+}
+
+repositories {
+    gradlePluginPortal()
+    google()
+    mavenCentral()
+}
+
+gradlePlugin {
+    plugins {
+        javaSample {
+            id = 'com.example.jmatsu.java'
+            implementationClass = 'com.example.jmatsu.JavaSamplePlugin'
+        }
+        groovySample {
+            id = 'com.example.jmatsu.groovy'
+            implementationClass = 'com.example.jmatsu.GroovySamplePlugin'
+        }
+    }
+}
