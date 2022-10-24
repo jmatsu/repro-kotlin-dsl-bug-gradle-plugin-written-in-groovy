@@ -35,13 +35,13 @@ groovySample {
         // AGP 4.1.2 × Gradle 6.7.1 -> NG
         // AGP 4.1.2 × Gradle 6.8 -> OK
         // AGP 4.2.0 × Gradle 6.7.1 -> OK
-//        create("fail") {
-//            param = "${file("if you touch some built-in api")}"
-//
-//            anyLambda {
-//                "without built-in api call"
-//            }
-//        }
+        create("fail") {
+            param = "${file("if you touch some built-in api")}"
+
+            anyLambda {
+                "without built-in api call"
+            }
+        }
     }
 }
 
