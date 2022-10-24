@@ -46,7 +46,7 @@ Build_gradle$2$1$3
 This behaviour depends on Gradle -- Groovy transitively.
 
 | Language | Gradle Version | Result |
-|:---|:---|:---|:---|
+|:---|:---|:---|
 | Java | 5.6-5.8 | Success |
 | Groovy | 5.6-5.7.1 | Fail |
 | Groovy | 5.8- | Success |
