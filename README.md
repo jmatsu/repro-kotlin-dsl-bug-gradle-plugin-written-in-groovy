@@ -47,9 +47,9 @@ This behaviour depends on Gradle -- Groovy transitively.
 
 | Language | Gradle Version | Result |
 |:---|:---|:---|
-| Java | 5.6-5.8 | Success |
-| Groovy | 5.6-5.7.1 | Fail |
-| Groovy | 5.8- | Success |
+| Java | 6.6-6.8 | Success |
+| Groovy | 6.6-6.7.1 | Fail |
+| Groovy | 6.8- | Success |
 
 We cannot avoid this behaviour even if we specify the distribution Groovy version.
 
