@@ -3,6 +3,7 @@ package com.example.jmatsu;
 import org.gradle.api.Action;
 import org.gradle.api.Named
 
+@groovy.transform.CompileStatic
 class GroovyDefinition implements Named {
     private final String name;
 
