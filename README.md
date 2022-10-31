@@ -1,3 +1,12 @@
+This happened due to Groovy's dynamic compilation with Kotlin 1.3's type inference algorithm. ref: https://github.com/gradle/gradle/issues/22529
+
+We can take the following actions.
+
+- Use static typed JVM language
+- Use CompileStatic annotation in Groovy
+
+---
+
 As for Kotlin DSL, A build function that take an Action interface may fail depending on Gradle versions if it's originally written in Groovy.
 
 ```gradle
